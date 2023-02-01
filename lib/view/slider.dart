@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class SliderImage extends StatefulWidget {
   List<dynamic>? images;
-  SliderImage(this.images);
+  SliderImage(this.images, {Key? key}) : super(key: key);
   @override
   _MySliderState createState() => _MySliderState(images);
 }
@@ -23,16 +23,16 @@ class _MySliderState extends State<SliderImage> {
         dotSpacing: 15.0,
         dotPosition: DotPosition.bottomCenter,
         images: [
-          Image.network(images![0].toString()),
+          // Image.network(images![0].toString()),
           // Image.network(images![1].toString()),
           // Image.network(images![2].toString()),
           // Image.network(images![3].toString())
-          // Image.asset(
-          //   'assets/images/2.png',
-          //   fit: BoxFit.cover,
-          //   width: double.infinity,
-          //   height: 200,
-          // ),
+          Image.asset(
+            'assets/images/2.png',
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: 200,
+          ),
           // Image.asset(
           //   'assets/images/2.png',
           //   fit: BoxFit.cover,

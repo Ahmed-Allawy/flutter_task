@@ -6,6 +6,7 @@ class Data {
   String? trainerInfo;
   String? address;
   String? interest;
+  var date;
   Data(
       {this.address,
       this.images,
@@ -13,15 +14,18 @@ class Data {
       this.reservTypes,
       this.trainerInfo,
       this.trainerName,
+      this.date,
       this.interest});
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
-        images: (json['img'] as List<dynamic>).cast<String>(),
-        reservTypes: (json['reservTypes'] as List<dynamic>).cast<String>(),
-        occasionDetail: json['occasionDetail'],
-        trainerName: json['trainerName'],
-        trainerInfo: json['trainerInfo'],
-        address: json['address'],
-        interest: json['interest']);
+      images: json['img'],
+      reservTypes: json['reservTypes'],
+      occasionDetail: json['occasionDetail'],
+      trainerName: json['trainerName'],
+      trainerInfo: json['trainerInfo'],
+      address: json['address'],
+      interest: json['interest'],
+      date: json['date'],
+    );
   }
 }

@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, non_constant_identifier_names, unused_local_variable, override_on_non_overriding_member, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:tast/models/api_data_model.dart';
 import 'package:tast/services/api.dart';
+import 'package:tast/view/course_info.dart';
 import 'package:tast/view/slider.dart';
 import 'package:tast/view_model/data_view_model.dart';
 
@@ -34,13 +34,21 @@ class _HomeState extends State<Home> {
                 child: FutureBuilder(
                     future: data.fetchUrl(),
                     builder: (Context, snapshot) {
-                      Data allData = snapshot.data as Data;
-                      print(allData.address);
                       if (snapshot.hasData) {
-                        return SliderImage(allData.images);
+                        Data allData = snapshot.data as Data;
+                        print("i am here $allData");
+                        return Column(children: <Widget>[
+                          SliderImage(allData.images),
+                          CourseInfo(
+                            courseAddress: allData.address!,
+                            courseName: allData.address!,
+                            courseDate: allData.date!,
+                          )
+                        ]);
                       } else {
-                        return CircularProgressIndicator();
+                        return Center(child: CircularProgressIndicator());
                       }
+                      // return CircularProgressIndicator();
                     }))));
   }
 }

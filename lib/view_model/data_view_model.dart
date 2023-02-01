@@ -12,7 +12,7 @@ class DataView extends ChangeNotifier {
     return null;
   }
 
-  Data? getData() {
-    return _data;
+  Data getData() {
+    return _data!;
   }
 }
