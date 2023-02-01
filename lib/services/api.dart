@@ -31,8 +31,8 @@ class Api {
       http.Response response = await http.get(Uri.parse(
           'https://run.mocky.io/v3/3a1ec9ff-6a95-43cf-8be7-f5daa2122a34'));
       if (response.statusCode == 200) {
-        // print(jsonDecode(response.body)['img']);
-        return Data.fromJson(jsonDecode(response.body));
+        print(jsonDecode(response.body)['img']);
+        return (Data.fromJson(jsonDecode(response.body)));
       }
     } catch (e) {
       print(e);

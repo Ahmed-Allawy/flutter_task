@@ -16,8 +16,8 @@ class Data {
       this.interest});
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
-        images: json['img'],
-        reservTypes: json['reservTypes'],
+        images: (json['img'] as List<dynamic>).cast<String>(),
+        reservTypes: (json['reservTypes'] as List<dynamic>).cast<String>(),
         occasionDetail: json['occasionDetail'],
         trainerName: json['trainerName'],
         trainerInfo: json['trainerInfo'],
