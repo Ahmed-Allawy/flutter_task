@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable, unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:tast/handling_time.dart';
 
 import 'constants.dart';
 
@@ -18,6 +19,7 @@ class CourseInfo extends StatelessWidget {
       required this.screenheight});
   @override
   Widget build(BuildContext context) {
+    TimeDate date = TimeDate(courseDate);
     return Container(
       color: containerColor,
       padding: EdgeInsets.only(right: 10),
@@ -44,7 +46,7 @@ class CourseInfo extends StatelessWidget {
               height: 20,
             ),
             Text(
-              courseDate,
+              "${date.dayName()} , ${date.dayNumber()} ${date.monthName()} , ${date.hour()}:${date.minute()} ${date.period()}",
               style: TextStyle(color: font3Color, fontSize: font3Size),
             )
           ]),
