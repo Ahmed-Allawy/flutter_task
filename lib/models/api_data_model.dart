@@ -7,7 +7,7 @@ class Data {
   String? trainerImage;
   String? address;
   String? interest;
-  var date;
+  String? date;
   Data(
       {this.address,
       this.images,
@@ -16,7 +16,7 @@ class Data {
       this.trainerInfo,
       this.trainerImage,
       this.trainerName,
-      this.date,
+      required this.date,
       this.interest});
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(

@@ -1,4 +1,8 @@
+// ignore_for_file: camel_case_types, must_be_immutable
+
 import 'package:flutter/material.dart';
+
+import 'constants.dart';
 
 class Trainer extends StatelessWidget {
   String trainerName;
@@ -13,39 +17,34 @@ class Trainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: containerColor,
+      width: double.infinity,
       padding: const EdgeInsets.only(right: 10),
-      // color: Colors.green,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           Row(textDirection: TextDirection.rtl, children: <Widget>[
             const CircleAvatar(
-              radius: 15,
+              radius: 18,
               backgroundImage: AssetImage('assets/images/th-4098760468.jpg'),
             ),
-            Text(trainerName)
+            Text(
+              trainerName,
+              style: const TextStyle(
+                  color: font2Color,
+                  fontSize: font2Size,
+                  fontWeight: FontWeight.bold),
+            )
           ]),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Text(trainerInfo)
+          Text(
+            trainerInfo,
+            style: const TextStyle(color: font3Color, fontSize: font3Size),
+          )
         ],
       ),
-    );
-  }
-}
-
-class trainerImage extends StatelessWidget {
-  const trainerImage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 30,
-      height: 30,
-      // color: Colors.red,
-      decoration: const BoxDecoration(shape: BoxShape.circle),
-      child: Image.asset('assets/images/th-4098760468.jpg'),
     );
   }
 }
