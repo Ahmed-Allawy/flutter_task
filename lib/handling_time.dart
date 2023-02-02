@@ -15,7 +15,11 @@ class TimeDate {
   }
 
   int hour() {
-    return convertToDateTime().hour;
+    if (convertToDateTime().hour > 12) {
+      return convertToDateTime().hour - 12;
+    } else {
+      return convertToDateTime().hour;
+    }
   }
 
   int minute() {

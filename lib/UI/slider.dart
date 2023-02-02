@@ -42,18 +42,6 @@ class _MySliderState extends State<SliderImage> {
             images![3],
             fit: BoxFit.fill,
           ),
-          // Image.asset(
-          //   'assets/images/2.png',
-          //   fit: BoxFit.cover,
-          //   width: double.infinity,
-          //   height: 200,
-          // ),
-          // Image.asset(
-          //   'assets/images/2.png',
-          //   fit: BoxFit.cover,
-          //   width: double.infinity,
-          //   height: 200,
-          // ),
         ],
       ),
     );

@@ -10,20 +10,18 @@ class CourseInfo extends StatelessWidget {
   String courseDate;
   String courseAddress;
   String interest;
-  double screenheight;
-  CourseInfo(
-      {required this.courseAddress,
-      required this.courseDate,
-      required this.courseName,
-      required this.interest,
-      required this.screenheight});
+  CourseInfo({
+    required this.courseAddress,
+    required this.courseDate,
+    required this.courseName,
+    required this.interest,
+  });
   @override
   Widget build(BuildContext context) {
     TimeDate date = TimeDate(courseDate);
     return Container(
       color: containerColor,
       padding: EdgeInsets.only(right: 10),
-      // color: Colors.green,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
