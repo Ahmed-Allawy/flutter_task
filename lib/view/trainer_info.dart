@@ -24,9 +24,11 @@ class Trainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           Row(textDirection: TextDirection.rtl, children: <Widget>[
-            const CircleAvatar(
+            CircleAvatar(
               radius: 18,
-              backgroundImage: AssetImage('assets/images/th-4098760468.jpg'),
+              // backgroundImage: NetworkImage(trainerImage),
+              foregroundImage: NetworkImage(trainerImage),
+              // AssetImage('assets/images/th-4098760468.jpg'),
             ),
             Text(
               trainerName,

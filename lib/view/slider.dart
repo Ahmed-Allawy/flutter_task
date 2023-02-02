@@ -26,16 +26,28 @@ class _MySliderState extends State<SliderImage> {
         dotPosition: DotPosition.bottomLeft,
         dotBgColor: Colors.transparent,
         images: [
-          // Image.network(images![0].toString()),
-          // Image.network(images![1].toString()),
-          // Image.network(images![2].toString()),
-          // Image.network(images![3].toString())
-          Image.asset(
-            'assets/images/2.png',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: 200,
+          Image.network(
+            images![0],
+            fit: BoxFit.fill,
           ),
+          Image.network(
+            images![1],
+            fit: BoxFit.fill,
+          ),
+          Image.network(
+            images![2],
+            fit: BoxFit.fill,
+          ),
+          Image.network(
+            images![3],
+            fit: BoxFit.fill,
+          ),
+          // Image.asset(
+          //   'assets/images/2.png',
+          //   fit: BoxFit.cover,
+          //   width: double.infinity,
+          //   height: 200,
+          // ),
           // Image.asset(
           //   'assets/images/2.png',
           //   fit: BoxFit.cover,

@@ -29,7 +29,7 @@ class Api {
   Future<Data?> fetchUrl() async {
     try {
       http.Response response = await http.get(Uri.parse(
-          'https://run.mocky.io/v3/3a1ec9ff-6a95-43cf-8be7-f5daa2122a34'));
+          'https://flutter-api-843ff-default-rtdb.firebaseio.com//.json?&auh=kYNTZenQaf8YAFMkf5v5xdwQqQXag1IoShBS2Bg8'));
       if (response.statusCode == 200) {
         print(jsonDecode(response.body)['img']);
         return (Data.fromJson(jsonDecode(response.body)));
