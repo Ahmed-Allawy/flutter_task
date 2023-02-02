@@ -9,6 +9,7 @@ import 'package:tast/models/api_data_model.dart';
 class Api {
   Future<Data>? data;
   // https://flutter-api-843ff-default-rtdb.firebaseio.com//.json?&auh=kYNTZenQaf8YAFMkf5v5xdwQqQXag1IoShBS2Bg8
+  //https://run.mocky.io/v3/3a1ec9ff-6a95-43cf-8be7-f5daa2122a34
 
   Future<Data?> fetchUrl() async {
     try {
