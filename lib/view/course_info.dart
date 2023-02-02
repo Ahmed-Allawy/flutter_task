@@ -9,11 +9,13 @@ class CourseInfo extends StatelessWidget {
   String courseDate;
   String courseAddress;
   String interest;
+  double screenheight;
   CourseInfo(
       {required this.courseAddress,
       required this.courseDate,
       required this.courseName,
-      required this.interest});
+      required this.interest,
+      required this.screenheight});
   @override
   Widget build(BuildContext context) {
     return Container(

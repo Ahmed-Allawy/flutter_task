@@ -29,7 +29,12 @@ class _HomeState extends State<Home> {
         backgroundColor: backgroundColor,
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.arrow_back,
+            ),
+          ),
           actions: [
             IconButton(onPressed: () {}, icon: Icon(Icons.star)),
             IconButton(onPressed: () {}, icon: Icon(Icons.share))
@@ -37,78 +42,88 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
-        body: Container(
+        body: SizedBox(
             // color: Color.fromARGB(255, 0, 0, 0),
+            width: double.infinity,
             child: FutureBuilder(
                 future: data.fetchUrl(),
                 builder: (Context, snapshot) {
                   if (snapshot.hasData) {
                     Data allData = snapshot.data as Data;
                     print("i am here $allData");
-                    return Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          SliderImage(allData.images, screenHeight),
-                          CourseInfo(
-                            courseAddress: allData.address!,
-                            courseName: allData.reservTypes![0]['name'],
-                            courseDate: allData.date!,
-                            interest: allData.interest!,
-                          ),
-                          Space(),
-                          Trainer(
-                            trainerName: allData.trainerName!,
-                            trainerInfo: allData.trainerInfo!,
-                            trainerImage: allData.trainerImage!,
-                          ),
-                          Space(),
-                          Container(
-                            color: containerColor,
-                            width: double.infinity,
-                            padding: EdgeInsets.only(right: 10),
-                            child: const Text(
-                              "عن الدورة ",
-                              style: TextStyle(
-                                  backgroundColor: Colors.white,
-                                  color: font2Color,
-                                  fontSize: font2Size,
-                                  fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.right,
-                            ),
-                          ),
-                          Expanded(
-                              // child: SingleChildScrollView(
-                              // padding: EdgeInsets.only(right: 10),
-                              child: Container(
-                            padding: EdgeInsets.only(right: 10),
-                            color: Colors.white,
-                            width: double.infinity,
-                            child: Text(
-                              allData.occasionDetail!,
-                              style: TextStyle(
-                                  backgroundColor: Colors.white,
-                                  color: font3Color,
-                                  fontSize: font3Size),
-                              textDirection: TextDirection.rtl,
-                            ),
-                            // ),
-                          )),
-                          Space(),
-                          PriceTwo(
-                            price: allData.reservTypes![0]['price'],
-                            screenWidth: screenWidth,
-                          ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                shape: BeveledRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.zero)),
-                                backgroundColor: butoonColor,
-                                minimumSize: Size(double.infinity, 50)),
-                            onPressed: () {},
-                            child: Text("قم بالحجز الان"),
-                          )
-                        ]);
+                    return Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: <Widget>[
+                              SliderImage(allData.images, screenHeight),
+                              CourseInfo(
+                                courseAddress: allData.address!,
+                                courseName: allData.reservTypes![0]['name'],
+                                courseDate: allData.date!,
+                                interest: allData.interest!,
+                                screenheight: screenHeight,
+                              ),
+                              Space(),
+                              Trainer(
+                                trainerName: allData.trainerName!,
+                                trainerInfo: allData.trainerInfo!,
+                                trainerImage: allData.trainerImage!,
+                              ),
+                              Space(),
+                              Container(
+                                color: containerColor,
+                                width: double.infinity,
+                                padding: EdgeInsets.only(right: 10),
+                                child: const Text(
+                                  "عن الدورة ",
+                                  style: TextStyle(
+                                      backgroundColor: Colors.white,
+                                      color: font2Color,
+                                      fontSize: font2Size,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.right,
+                                ),
+                              ),
+                              Expanded(
+                                  child: SingleChildScrollView(
+                                // padding: EdgeInsets.only(right: 10),
+                                child: Container(
+                                  height: screenHeight * 1755 / 2277,
+                                  padding: EdgeInsets.only(right: 10),
+                                  color: Colors.white,
+                                  width: double.infinity,
+                                  child: Text(
+                                    allData.occasionDetail!,
+                                    style: TextStyle(
+                                        backgroundColor: Colors.white,
+                                        color: font3Color,
+                                        fontSize: font3Size),
+                                    textDirection: TextDirection.rtl,
+                                  ),
+                                ),
+                              )),
+                              Space(),
+                              PriceTwo(
+                                price: allData.reservTypes![0]['price'],
+                                screenWidth: screenWidth,
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    shape: BeveledRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.all(Radius.zero)),
+                                    backgroundColor: butoonColor,
+                                    minimumSize: Size(double.infinity, 50)),
+                                onPressed: () {},
+                                child: Text(
+                                  "قم بالحجز الان",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              )
+                            ]),
+                      ),
+                    );
                   } else {
                     return Center(child: CircularProgressIndicator());
                   }

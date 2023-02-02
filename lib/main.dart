@@ -6,7 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:tast/view/home.dart';
 
 void main() {
-  runApp(DevicePreview(builder: (context) => MyApp()));
+  runApp(
+      // DevicePreview(builder: (context) =>
+      MyApp()
+      // )
+      );
 }
 
 class MyApp extends StatelessWidget {

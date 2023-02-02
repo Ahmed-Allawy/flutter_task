@@ -46,18 +46,19 @@ class PriceTwo extends StatelessWidget {
                   height: 5,
                 ),
                 Text("SAR ${price / (5 / 3)}",
+                    textWidthBasis: TextWidthBasis.longestLine,
                     style: TextStyle(
                       color: font3Color,
                     )),
               ],
             ),
-            // Container(
-            //   width: screenWidth / 2,
-            //   height: 30,
-            //   color: Colors.red,
-            // ),
+            Container(
+              width: screenWidth * 500 / 1080,
+            ),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              textDirection: TextDirection.ltr,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: const <Widget>[
                 Text("الحجز العادي ",
                     style: TextStyle(
@@ -74,9 +75,7 @@ class PriceTwo extends StatelessWidget {
                   height: 3,
                 ),
                 Text("الحجز السريع",
-                    style: TextStyle(
-                      color: font3Color,
-                    )),
+                    style: TextStyle(color: font3Color, wordSpacing: 2)),
               ],
             ),
           ],

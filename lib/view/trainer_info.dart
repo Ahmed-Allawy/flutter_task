@@ -30,6 +30,10 @@ class Trainer extends StatelessWidget {
               foregroundImage: NetworkImage(trainerImage),
               // AssetImage('assets/images/th-4098760468.jpg'),
             ),
+            // ignore: prefer_const_constructors
+            SizedBox(
+              width: 10,
+            ),
             Text(
               trainerName,
               style: const TextStyle(
