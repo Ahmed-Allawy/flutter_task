@@ -26,7 +26,9 @@ class Trainer extends StatelessWidget {
           Row(textDirection: TextDirection.rtl, children: <Widget>[
             CircleAvatar(
               radius: 18,
-              foregroundImage: NetworkImage(trainerImage),
+              foregroundImage:
+                  // CachedNetworkImageProvider(trainerImage)
+                  NetworkImage(trainerImage),
             ),
             // ignore: prefer_const_constructors
             SizedBox(

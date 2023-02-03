@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const butoonColor = Color(0xFF78109a);
+const buttonColor = Color(0xFF78109a);
 const font1Color = Color(0xFF494949);
 const font2Color = Color(0xFF8e8e8e);
 const font3Color = Color(0xFFa4a4a4);

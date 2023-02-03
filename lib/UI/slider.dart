@@ -26,6 +26,10 @@ class _MySliderState extends State<SliderImage> {
         dotPosition: DotPosition.bottomLeft,
         dotBgColor: Colors.transparent,
         images: [
+          // CachedNetworkImage(
+          //   imageUrl: images![0],
+          //   placeholder: (context, url) => CircularProgressIndicator(),
+          // ),
           Image.network(
             images![0],
             fit: BoxFit.fill,

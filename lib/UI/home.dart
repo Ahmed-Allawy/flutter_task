@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
                 builder: (Context, snapshot) {
                   if (snapshot.hasData) {
                     Data allData = snapshot.data as Data;
-                    print("i am here $allData");
+                    // print("i am here $allData");
                     return Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
@@ -92,6 +92,7 @@ class _HomeState extends State<Home> {
                                     width: double.infinity,
                                     child: Text(
                                       allData.occasionDetail!,
+                                      // "\t\t\t\tahmed\t\nahmed",
                                       style: TextStyle(
                                           backgroundColor: Colors.white,
                                           color: font3Color,
@@ -113,7 +114,7 @@ class _HomeState extends State<Home> {
                                 shape: BeveledRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.zero)),
-                                backgroundColor: butoonColor,
+                                backgroundColor: buttonColor,
                                 minimumSize: Size(double.infinity, 50)),
                             onPressed: () {},
                             child: Text(
